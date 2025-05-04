@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ant Hunger Wars</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="antCanvas" width="800" height="600"></canvas>
+    <div id="controls">
+      <h1>Controls</h1>
+
+      <!-- Number of Ants -->
+      <label>
+        🐜 Number of Ants:
+        <input type="range" min="1" max="100" value="5" id="numAnts" />
+        <span class="tooltip" id="numAntsTooltip">5</span>
+      </label>
+
+      <!-- Food Count -->
+      <label>
+        🍗 Food Count:
+        <input type="range" min="1" max="50" value="10" id="foodCount" />
+        <span class="tooltip" id="foodCountTooltip">10</span>
+      </label>
+
+      <!-- Ghost Chance -->
+      <label>
+        👻 Ghost Chance:
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.5"
+          id="ghostChance"
+        />
+        <span class="tooltip" id="ghostChanceTooltip">0.5</span>
+      </label>
+
+      <!-- Trail Length -->
+      <label>
+        🔴 Trail Length:
+        <input type="range" min="5" max="50" value="15" id="trailLength" />
+        <span class="tooltip" id="trailLengthTooltip">15</span>
+      </label>
+
+      <!-- Rage Radius -->
+      <label>
+        😡 Rage Radius:
+        <input type="range" min="1" max="20" value="6" id="rageRadius" />
+        <span class="tooltip" id="rageRadiusTooltip">6</span>
+      </label>
+
+      <!-- Food Radius -->
+      <label>
+        🍕 Food Radius:
+        <input type="range" min="1" max="20" value="6" id="foodRadius" />
+        <span class="tooltip" id="foodRadiusTooltip">6</span>
+      </label>
+
+      <!-- Ant Speed -->
+      <label>
+        🐜 Ant Speed:
+        <input type="range" min="1" max="10" value="2" id="antSpeed" />
+        <span class="tooltip" id="antSpeedTooltip">2</span>
+      </label>
+    </div>
+
+    <button id="infoBtn">Info</button>
+
+    <div id="infoDialog" class="dialog">
+      <div class="dialog-content">
+        <span id="closeDialog" class="close">&times;</span>
+        <h2>Ant Hunger Wars</h2>
+        <p>
+          This simulation lets you control an army of ants that roam around
+          looking for food.
+        </p>
+        <p>
+          Blue Ant: Normal Ants looking for food. Red Ant: Rage Ants that can
+          eat other ants. Green Ant: Ants that can eat Rage Ants.
+        </p>
+        <p>
+          Food comes in two types: normal food and ghost food. Normal food makes
+          ants reproduce, while ghost food makes ants go into rage mode and can
+          eat other ants!
+        </p>
+        <p>
+          Control the number of ants, the amount of food, and the chance of
+          ghost food. Watch as the ants grow, rage, and battle for survival.
+        </p>
+        <p><strong>Settings:</strong></p>
+        <ul>
+          <li>
+            <strong>Number of Ants:</strong> The total number of ants in the
+            simulation.
+          </li>
+          <li>
+            <strong>Food Count:</strong> The number of food items available for
+            ants to find.
+          </li>
+          <li>
+            <strong>Ghost Chance:</strong> The probability that a food item is a
+            ghost food (0 = no ghost food, 1 = all ghost food).
+          </li>
+          <li>
+            <strong>Trail Length:</strong> The length of the trail an ant leaves
+            behind.
+          </li>
+          <li>
+            <strong>Rage Radius:</strong> The distance within which ants enter
+            rage mode when they find ghost food.
+          </li>
+          <li>
+            <strong>Food Radius:</strong> The distance within which ants can
+            interact with food.
+          </li>
+          <li>
+            <strong>Ant Speed:</strong> The speed at which ants move in the
+            simulation.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
